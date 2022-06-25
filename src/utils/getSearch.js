@@ -1,11 +1,10 @@
-import { apiURL } from './global'
+import { apiURL, limit } from './global'
 
 export default function getSearch(term) {
-	const URL = `${apiURL}?terms=${term.replace(' ', '+')}`
+	const URL = `${apiURL}?term=${term.replace(
+		' ',
+		'+'
+	)}&limit=${limit}&entity=album`
 
-	return fetch(URL, { method: 'POST' })
-		.then((res) => res.json())
-		.catch((err) => {
-			console.log(err)
-		})
+	return fetch(URL, { method: 'POST' }).then((res) => res.json())
 }

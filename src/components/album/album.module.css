@@ -1,0 +1,29 @@
+.album {
+	width: 100%;
+	padding: 15px 15px 30px 15px;
+	height: 100%;
+	background-color: rgb(14, 14, 14);
+	box-shadow: 3px 3px 10px #000;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.album_image {
+	width: 70%;
+	max-width: 200px;
+}
+
+.album_title {
+	color: #fff;
+	font-size: 18px;
+	padding: 20px 0;
+	font-weight: 500;
+}
+
+.album_artist {
+	color: #ddd;
+	font-size: 16px;
+	font-weight: 400;
+}

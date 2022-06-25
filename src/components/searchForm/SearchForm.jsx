@@ -1,14 +1,19 @@
-import style from './search.module.css'
-import getSearch from '../../utils/getSearch'
 import { useRef } from 'react'
+import { useSearchParams } from 'react-router-dom'
 
-const Search = () => {
+import style from './search.module.css'
+
+const SearchForm = () => {
 	const ref = useRef(null)
+
+	const [searchParams, setSearchParams] = useSearchParams()
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
 
-		getSearch().then()
+		const term = ref.current.value
+
+		setSearchParams({ search: term })
 	}
 
 	return (
@@ -26,4 +31,4 @@ const Search = () => {
 	)
 }
 
-export default Search
+export default SearchForm
