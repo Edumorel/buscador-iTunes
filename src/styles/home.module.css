@@ -1,0 +1,11 @@
+.title {
+	text-align: center;
+	font-size: 35px;
+}
+
+.paragraph {
+	text-align: center;
+	font-size: 22px;
+	padding: 10px 0;
+	color: #aaa;
+}
