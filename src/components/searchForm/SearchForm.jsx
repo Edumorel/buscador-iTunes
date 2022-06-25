@@ -1,6 +1,9 @@
 import { useRef } from 'react'
 import { useSearchParams } from 'react-router-dom'
 
+import { Button, TextField } from '@mui/material'
+import SearchIcon from '@mui/icons-material/Search'
+
 import style from './search.module.css'
 
 const SearchForm = () => {
@@ -11,22 +14,25 @@ const SearchForm = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault()
 
-		const term = ref.current.value
+		const data = Object.fromEntries(new FormData(e.target))
+		const { search } = data
 
-		setSearchParams({ search: term })
+		if (search) setSearchParams({ search: search })
 	}
 
 	return (
 		<form onSubmit={handleSubmit} className={style.form}>
-			<input
-				type='search'
-				placeholder='Busca'
+			<TextField
+				id='outlined-basic'
+				label='Busqueda'
+				variant='filled'
+				name='search'
 				className={style.input_search}
-				ref={ref}
-			></input>
-			<button type='submit' className={style.button}>
-				Buscar
-			</button>
+			/>
+
+			<Button type='submit' variant='contained' className={style.button}>
+				<SearchIcon />
+			</Button>
 		</form>
 	)
 }

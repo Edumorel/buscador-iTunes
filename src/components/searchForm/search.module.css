@@ -6,22 +6,10 @@
 
 .input_search {
 	width: 90%;
-	max-width: 400px;
-	padding: 10px;
-	background-color: rgb(37, 37, 37);
-	border: none;
-	border-bottom-left-radius: 7px;
-	border-top-left-radius: 7px;
-	color: rgb(199, 199, 199);
+	max-width: 450px;
 }
 
 .button {
 	width: 10%;
-	max-width: 100px;
-	cursor: pointer;
-	border-bottom-right-radius: 7px;
-	border-top-right-radius: 7px;
-	border: none;
-	background-color: rgb(220, 220, 220);
-	color: #000;
+	max-width: 50px;
 }
