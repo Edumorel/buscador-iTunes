@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import getSearch from '../utils/getSearch'
 
-export default function useSearch(search) {
+export default function useSearch(term, page) {
 	const [result, setResult] = useState([])
 	const [load, setLoad] = useState(false)
 	const [error, setError] = useState()
@@ -10,7 +10,7 @@ export default function useSearch(search) {
 		setLoad(false)
 		setError()
 
-		getSearch(search)
+		getSearch(term, page)
 			.then((res) => {
 				const { results } = res
 
@@ -27,7 +27,7 @@ export default function useSearch(search) {
 				setError('Lo sentimos, se ha producido un error')
 				setLoad(true)
 			})
-	}, [search])
+	}, [term, page])
 
 	return [result, load, error]
 }
